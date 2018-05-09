@@ -5,5 +5,12 @@
     <artifactId>topideal-wind</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>topideal-admin</artifactId>
+  <artifactId>topideal-comm</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>snsoft</groupId>
+  		<artifactId>snsoft-common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

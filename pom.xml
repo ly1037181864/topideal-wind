@@ -5,6 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+  	<module>topideal-wind-web</module>
   	<module>topideal-admin</module>
+  	<module>topideal-comm</module>
   </modules>
 </project>
