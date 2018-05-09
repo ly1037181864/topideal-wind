@@ -3,10 +3,69 @@
   <display-name>topideal-wind-web</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- Spring 配置路径 -->
+  <context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>classpath:config/app-*.xml</param-value>
+  </context-param>
+  <context-param>  
+      <param-name>spring.profiles.active</param-name>  
+      <param-value>dev</param-value>  
+  </context-param>  
+  <context-param>  
+      <param-name>spring.profiles.default</param-name>  
+      <param-value>dev</param-value>  
+  </context-param>  
+  <context-param>  
+      <param-name>spring.liveBeansView.mbeanDomain</param-name>  
+      <param-value>dev</param-value>  
+  </context-param>  
+  
+  <!-- Spring 监听启动 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>springServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:config/spring-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 检测开发环境，/druid/index.html -->
+    <servlet>
+	    <servlet-name>druidStatView</servlet-name>
+	    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>druidStatView</servlet-name>
+	    <url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 异常配置 -->
+	<error-page>
+		<error-code>400</error-code>
+		<location>/error/400.html</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/404.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/500.html</location>
+	</error-page>
+	
 </web-app>

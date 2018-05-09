@@ -6,11 +6,27 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>topideal-comm</artifactId>
+  
+  <properties>
+  	<spring-wind.version>1.1.5</spring-wind.version>
+  </properties>
+  
   <dependencies>
   	<dependency>
   		<groupId>snsoft</groupId>
   		<artifactId>snsoft-common</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>spring-wind</artifactId>
+			<version>${spring-wind.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.baomidou</groupId>
+					<artifactId>mybatis-plus</artifactId>
+				</exclusion>
+			</exclusions>
+	</dependency>
   </dependencies>
 </project>
