@@ -20,19 +20,17 @@ import snsoft.admin.service.ISnRoleService;
 import snsoft.admin.service.ISnUserService;
 import snsoft.comm.controller.SnBaseController;
 
+
 /**
- * <p>鏍囬锛? TODO</p>
- * <p>鍔熻兘锛? </p>
- * <p>鎵?灞炴ā鍧楋細 TODO</p>
- * <p>鐗堟潈锛? Copyright 漏 2018 SNSOFT</p>
- * <p>鍏徃: 鍖椾含鍗楀寳澶╁湴绉戞妧鑲′唤鏈夐檺鍏徃</p>
- * <p>鍒涘缓鏃ユ湡锛?2018骞?3鏈?27鏃? 涓嬪崍5:55:53</p>
- * <p>绫诲叏鍚嶏細snsoft.wind.controller.SnUserController</p>
- * 浣滆?咃細liuyou
- * 鍒濆锛?
- * 澶嶅锛?
- * 鐩戝惉浣跨敤鐣岄潰:
- * @version 8.0
+ * <p>标题： </p>
+ * <p>功能： </p>
+ * <p>版权： Copyright (c) 2018</p>
+ * <p>公司: 北京南北天地科技股份有限公司</p>
+ * <p>创建日期：2018年5月23日 下午3:17:27</p>
+ * <p>类全名：snsoft.admin.controller.SnUserController</p>
+ * 
+ * 作者：liuyou
+ * @version 1.0
  */
 @Controller
 @RequestMapping("/perm/user")
