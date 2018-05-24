@@ -14,7 +14,8 @@
                         <li><a href="contacts.html">联系我们</a></li>
                         <li><a href="mailbox.html">信箱</a></li>
                         <li class="divider"></li>
-                        <li><a href="#springUrl('/account/logout.html')">安全退出</a>
+                         #set($logoutUrl ="/account/logout.html?id="+$!{currentUser.id}+"&loginName="+$!{currentUser.loginName})
+                        <li><a href="#springUrl($logoutUrl)">安全退出</a>
                         </li>
                     </ul>
                 </div>

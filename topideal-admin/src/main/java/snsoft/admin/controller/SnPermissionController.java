@@ -11,7 +11,6 @@ import com.alibaba.fastjson.JSONObject;
 import snsoft.admin.entity.SnPermission;
 import snsoft.admin.service.ISnPermissionService;
 import snsoft.admin.service.ISnRolePermissionService;
-import snsoft.comm.controller.SnBaseController;
 /**
  * <p>项目标题： </p>
  * <p>项目功能： </p>
@@ -26,7 +25,7 @@ import snsoft.comm.controller.SnBaseController;
  */
 @Controller
 @RequestMapping("/perm/permission")
-public class SnPermissionController extends SnBaseController
+public class SnPermissionController extends SnAdminBaseController
 {
 	@Resource(name = "sn-SnPermissionService")
 	private ISnPermissionService		permissionService;

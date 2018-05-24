@@ -5,18 +5,15 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.kisso.common.util.HttpUtil;
-
+import snsoft.redis.service.ISnRedisService;
 /**
  * <p>项目标题： TODO</p>
  * <p>项目功能： </p>
@@ -30,40 +27,19 @@ import com.baomidou.kisso.common.util.HttpUtil;
  * @version 1.0
  */
 @Component
-public class SnBaseController implements HandlerInterceptor
+public abstract class SnBaseController
 {
-	protected Logger logger = LoggerFactory.getLogger(this.getClass());;
+	protected Logger				logger	= LoggerFactory.getLogger(this.getClass());;
 	@Autowired
-	protected HttpServletRequest request;
+	protected HttpServletRequest	request;
 	@Autowired
-	protected HttpServletResponse response;
+	protected HttpServletResponse	response;
 	@Autowired
-	protected HttpSession session;
+	protected HttpSession			session;
 	@Autowired
-	protected ServletContext application;
-
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
-	{
-		return true;
-	}
-
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception
-	{
-		/*
-		 * 方法调用后调用该方法，返回数据给请求页
-		 */
-		if (isLegalView(modelAndView))
-		{
-		}
-	}
-
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-			throws Exception
-	{
-		// TODO Auto-generated method stub
-
-	}
+	protected ServletContext		application;
+	@Resource(name = "sn-SnRedisService")
+	protected ISnRedisService		redisService;
 
 	/**
 	 * 判断是否为合法的视图地址

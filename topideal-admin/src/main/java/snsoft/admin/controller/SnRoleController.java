@@ -22,7 +22,6 @@ import snsoft.admin.service.ISnPermissionService;
 import snsoft.admin.service.ISnRolePermissionService;
 import snsoft.admin.service.ISnRoleService;
 import snsoft.admin.service.ISnUserRoleService;
-import snsoft.comm.controller.SnBaseController;
 /**
  * <p>项目标题： </p>
  * <p>项目功能： </p>
@@ -37,7 +36,7 @@ import snsoft.comm.controller.SnBaseController;
  */
 @Controller
 @RequestMapping("/perm/role")
-public class SnRoleController extends SnBaseController
+public class SnRoleController extends SnAdminBaseController
 {
 	@Resource(name = "sn-SnRoleService")
 	private ISnRoleService				roleService;

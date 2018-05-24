@@ -2,25 +2,18 @@ package snsoft.admin.controller;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.common.encrypt.SaltEncoder;
-
 import snsoft.admin.entity.SnUser;
 import snsoft.admin.service.ISnRoleService;
 import snsoft.admin.service.ISnUserService;
-import snsoft.comm.controller.SnBaseController;
-
-
 /**
  * <p>标题： </p>
  * <p>功能： </p>
@@ -34,12 +27,12 @@ import snsoft.comm.controller.SnBaseController;
  */
 @Controller
 @RequestMapping("/perm/user")
-public class SnUserController extends SnBaseController
+public class SnUserController extends SnAdminBaseController
 {
 	@Resource(name = "sn-SnUserService")
-	private ISnUserService userService;
+	private ISnUserService	userService;
 	@Resource(name = "sn-SnRoleService")
-	private ISnRoleService roleService;
+	private ISnRoleService	roleService;
 
 	@RequestMapping("/list")
 	public String list(Model model)

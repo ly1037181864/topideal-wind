@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import snsoft.admin.util.SnImageUtil;
-import snsoft.comm.controller.SnBaseController;
 import snsoft.redis.pub.SnCacheable;
 /**
  * <p>项目标题： </p>
@@ -25,7 +24,7 @@ import snsoft.redis.pub.SnCacheable;
  */
 @Controller
 @RequestMapping("/captcha")
-public class SnCaptchaController extends SnBaseController
+public class SnCaptchaController extends SnAdminBaseController
 {
 	/**
 	 * 生成图片

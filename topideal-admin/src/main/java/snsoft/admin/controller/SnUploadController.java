@@ -14,7 +14,6 @@ import com.baomidou.framework.upload.UploadMsg;
 import com.baomidou.framework.upload.UploadMultipartRequest;
 import com.baomidou.kisso.annotation.Action;
 import com.baomidou.kisso.annotation.Permission;
-import snsoft.comm.controller.SnBaseController;
 /**
  * <p>项目标题： </p>
  * <p>项目功能： </p>
@@ -29,7 +28,7 @@ import snsoft.comm.controller.SnBaseController;
  */
 @Controller
 @RequestMapping("/sys/upload")
-public class SnUploadController extends SnBaseController
+public class SnUploadController extends SnAdminBaseController
 {
 	/* 限制最大上传 3M */
 	private final static int MAX_POST_SIZE = 3 * 1024 * 1024;

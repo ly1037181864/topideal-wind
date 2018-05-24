@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views=UTF-8
+encoding//src/main/webapp/WEB-INF/views/common/nav_left.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/donate.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/index.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/lockscreen.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/login.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/register.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/user/avatar.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/user/list.html=UTF-8
+encoding/<project>=UTF-8

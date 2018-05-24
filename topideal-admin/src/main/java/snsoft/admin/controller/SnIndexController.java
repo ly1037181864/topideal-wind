@@ -3,7 +3,6 @@ package snsoft.admin.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import snsoft.comm.controller.SnBaseController;
 /**
  * <p>项目标题： </p>
  * <p>项目功能： </p>
@@ -17,7 +16,7 @@ import snsoft.comm.controller.SnBaseController;
  * @version 1.0
  */
 @Controller
-public class SnIndexController extends SnBaseController
+public class SnIndexController extends SnAdminBaseController
 {
 	/**
 	 * 首页

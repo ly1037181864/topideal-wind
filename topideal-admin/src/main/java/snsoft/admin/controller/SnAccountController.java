@@ -17,8 +17,6 @@ import snsoft.admin.constant.enums.SnUserType;
 import snsoft.admin.entity.SnUser;
 import snsoft.admin.service.ISnUserService;
 import snsoft.admin.util.SnSaltEncoderUtil;
-import snsoft.comm.controller.SnBaseController;
-import snsoft.redis.service.ISnRedisService;
 /**
  * <p>项目标题： </p>
  * <p>项目功能： </p>
@@ -33,12 +31,10 @@ import snsoft.redis.service.ISnRedisService;
  */
 @Controller
 @RequestMapping("/account")
-public class SnAccountController extends SnBaseController
+public class SnAccountController extends SnAdminBaseController
 {
 	@Resource(name = "sn-SnUserService")
-	private ISnUserService	userService;
-	@Resource(name = "sn-SnRedisService")
-	ISnRedisService			redisService;
+	private ISnUserService userService;
 
 	@RequestMapping(value = "/login")
 	public String index(Model model)
@@ -141,6 +137,15 @@ public class SnAccountController extends SnBaseController
 	@RequestMapping("/logout")
 	public String logout(Model model)
 	{
+		//在推出前清楚缓存中的信息
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie : cookies)
+		{
+			String name = cookie.getName();
+			Cookie newCookie = new Cookie(name, null);
+			cookie.setPath("/");
+			response.addCookie(newCookie);
+		}
 		return redirectTo("/account/login.html");
 	}
 

@@ -75,7 +75,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/index.html" />
-			<bean class="snsoft.comm.controller.SnBaseController" />
+			<bean class="snsoft.admin.controller.SnAdminBaseController" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
